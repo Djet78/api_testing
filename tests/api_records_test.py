@@ -60,11 +60,3 @@ class TestRecordsAPI:
     def test_api_send_errors_on_not_existing_list(self):
         resp_body = self._post_record(list=f'{LIST_URL}not_exist/').json()
         assert resp_body['list'] == [NOT_EXIST_ERROR]
-
-
-# dc = {'1': '', '2': '', '3': '', }
-# req = ['1', '2', ]
-#
-# print(all(field in dc for field in req))
-resp = requests.get(f'{RECORDS_URL}5/')
-print(resp.json())
