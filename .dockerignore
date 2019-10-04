@@ -1,0 +1,4 @@
+tests
+*/migrations
+db.sqlite3
+env*
