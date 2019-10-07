@@ -1,12 +1,14 @@
 version: "3"
 
 services:
+
   web:
+    container_name: rest_api_sqlite3
     build: ./
     ports:
      - "8000:8000"
 
-#   Comment volumes def below to run independent container
+#   Comment volumes def below to run immutable container
     volumes:
       - ".:/api_testing/"
 

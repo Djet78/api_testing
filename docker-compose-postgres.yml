@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:
+    container_name: postgres
+    image: postgres
+  web:
+    container_name: rest-api-postgres
+    build:
+     context: ./
+     dockerfile: DockerfilePostgres
+    ports:
+     - "8000:8000"
+
+#   Comment volumes def below to run immutable container
+    volumes:
+      - ".:/api_testing/"
+
+    command: bash -c "python manage.py makemigrations lists --settings=lists.settings-postgres && python manage.py migrate --settings=lists.settings-postgres && python manage.py runserver 0:8000 --settings=lists.settings-postgres"
+
+    depends_on:
+      - db
