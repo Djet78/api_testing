@@ -6,7 +6,7 @@ services:
     ports:
      - "8000:8000"
 
-#   Comment volumes def below to run independent container add api_testing/
+#   Comment volumes def below to run independent container
     volumes:
       - ".:/api_testing/"
 
