@@ -5,4 +5,10 @@ services:
     build: ./
     ports:
      - "8000:8000"
-    command: bash -c "python api_testing/manage.py runserver 0:8000"
+
+#   Comment volumes def below to run independent container add api_testing/
+    volumes:
+      - ".:/api_testing/"
+
+#   Add api_testing/ to manage.py path if 'volumes' disabled
+    command: bash -c "python manage.py runserver 0:8000"

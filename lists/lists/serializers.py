@@ -25,4 +25,4 @@ class RecordSerializer(serializers.HyperlinkedModelSerializer):
 class ListSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = List
-        fields = ['url', 'owner', 'records']
+        fields = ['url', 'owner', 'records', ]
